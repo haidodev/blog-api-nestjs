@@ -11,10 +11,10 @@ import { ConfigModule } from '@nestjs/config';
 import { PostsModule } from './posts/posts.module';
 @Module({
   imports: [
+    ConfigModule.forRoot({ isGlobal: true }),
     PrismaModule,
     UsersModule,
     AuthModule,
-    ConfigModule.forRoot({ isGlobal: true }),
     PostsModule
   ],
   controllers: [AppController],
